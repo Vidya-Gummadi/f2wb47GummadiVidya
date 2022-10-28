@@ -2,4 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to Pug
+  button(type = "button", class = "btn btn-success", onClick = "clicks()") Click<br>
+  div(id = "target") Click on me
+
+    script.
+      var count = 0;
+      function clicks(){
+        count = count + 1;
+        document.getElementById("target").innerHTML = 'Clicked '+ count +' times';
+      }
